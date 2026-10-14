@@ -37,4 +37,3 @@ Jira Service Management	        1. Užklausų registravimas ir eilių valdymas  
 Zendesk	                        1. Daugiakanalis užklausų surinkimas (el. paštas, pokalbiai)     Naudinga: patogi sąsaja, greitas diegimas.
                                 2. Automatinis priskirimas agentams                              Ne naudinga: brangus palaikymas ir prenumeratos mokestis smulkiam verslui.
                                 3. Vartotojų pasitenkinimo vertinimas	
-
