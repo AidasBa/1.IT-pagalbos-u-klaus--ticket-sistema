@@ -38,7 +38,3 @@ Zendesk	                        1. Daugiakanalis užklausų surinkimas (el. paš
                                 2. Automatinis priskirimas agentams                              Ne naudinga: brangus palaikymas ir prenumeratos mokestis smulkiam verslui.
                                 3. Vartotojų pasitenkinimo vertinimas	
 
-
-
-
-
