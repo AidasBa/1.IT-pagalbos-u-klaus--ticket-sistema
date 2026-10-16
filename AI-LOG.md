@@ -7,3 +7,6 @@ Data            Problema                                            Kaip naudota
 2026-10-14      Nesugalvojau projekto failų struktūros              Prašymas pasiūlyti struktūrą            Pasiūlė failus      Priėmiau failų struktūrą
 
 2026-10-14      Neradau klaidos kode                                Prašymas rasti klaidą kode              Parodė nepridėto ;  Pridėjau ; kodo eilutėje
+
+2026-10-15      Reikėjo pagalbos užklausų auto. generavimui         Prašymas sukurti kodą                   Sukūrė, panaudojus kodą suveikė
+

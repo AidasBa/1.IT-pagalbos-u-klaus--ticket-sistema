@@ -8,33 +8,43 @@ if(isset($_POST['submit']))
     $prioritetas = $_POST['prioritetas'];
     $assigned_to = $_POST['assigned_to'];
 
-
+    // VT-1
     if($prioritetas == "aukstas" && empty($assigned_to))
     {
-        die("Aukšto prioriteto užklausa privalo turėti priskirtą darbuotoją.");
+        die("Aukšto prioriteto užklausa privalo turėti priskirtą specialistą.");
     }
 
+    // Tikriname ar specialistas egzistuoja
+    if(!empty($assigned_to) && $assigned_to != 1)
+    {
+        die("Toks specialistas neegzistuoja.");
+    }
+
+    // VT-2
     if(strlen(trim($aprasymas)) < 5)
     {
         die("Aprašymas turi būti bent 5 simbolių ilgio.");
     }
 
     $sql = "INSERT INTO tickets
-    (pavadinimas, aprasymas, prioritetas, assigned_to, busena)
+    (pavadinimas, aprasymas, prioritetas, user_id, assigned_to, busena)
     VALUES
-    ('$pavadinimas', '$aprasymas', '$prioritetas', '$assigned_to', 'naujas')";
+    ('$pavadinimas', '$aprasymas', '$prioritetas', 1, '$assigned_to', 'naujas')";
 
     $conn->query($sql);
 
     header("Location: dashboard.php");
+    exit();
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="lt">
 <head>
     <meta charset="UTF-8">
     <title>Nauja užklausa</title>
+
+    <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 
@@ -42,18 +52,18 @@ if(isset($_POST['submit']))
 
 <form method="POST">
 
-    <input type="text"
-           name="pavadinimas"
-           placeholder="Pavadinimas"
-           required>
+    <input
+        type="text"
+        name="pavadinimas"
+        placeholder="Pavadinimas"
+        required>
 
     <br><br>
 
     <textarea
         name="aprasymas"
         placeholder="Aprašymas"
-        required>
-    </textarea>
+        required></textarea>
 
     <br><br>
 
@@ -65,9 +75,23 @@ if(isset($_POST['submit']))
 
     <br><br>
 
-    <input type="number"
-           name="assigned_to"
-           placeholder="Darbuotojo ID">
+    <label>
+        Priskirti specialistą:
+    </label>
+
+    <br><br>
+
+    <select name="assigned_to">
+
+        <option value="">
+            Nepasirinkta
+        </option>
+
+        <option value="1">
+            Specialistas
+        </option>
+
+    </select>
 
     <br><br>
 
@@ -76,6 +100,14 @@ if(isset($_POST['submit']))
     </button>
 
 </form>
+
+<br>
+
+<p>
+    <a href="dashboard.php">
+        Grįžti į užklausų sąrašą
+    </a>
+</p>
 
 </body>
 </html>

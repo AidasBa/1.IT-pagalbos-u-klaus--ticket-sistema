@@ -5,3 +5,5 @@ Sukurti užklausą užpildant visus laukus                                 Pavyk
 Paleisti generator.php                                                  Pavyko / sukurta 1000 užklausų
 Paieškos lauke įvedus bent 1 žodį, suranda užklausą                     Pavyko / pagal norimą žodį, užklausa rasta
 Užklausos šalinimas                                                     Pavyko / užklausa ištrinta   
+Keičiant vartotojus palikti komentarą, kad rodytų kas tai parašė        Nepavyko / nerodė kas tai parašė
+Keičiant vartotojus palikti komentarą, kad rodytų kas tai parašė        Pavyko / rodo kuris vartotojas palieka komentarą

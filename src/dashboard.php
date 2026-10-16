@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+if(!isset($_SESSION['role']))
+{
+    header("Location: login.php");
+    exit();
+}
+
 require 'config.php';
 
 $paieska = $_GET['paieska'] ?? '';
@@ -13,6 +22,11 @@ if($rikiavimas != 'asc')
 
 $sql = "SELECT * FROM tickets WHERE 1=1";
 
+if($_SESSION['role'] == 'specialistas')
+{
+    $sql .= " AND busena != 'uzbaigtas'";
+}
+
 if($paieska != '')
 {
     $sql .= " AND pavadinimas LIKE '%$paieska%'";
@@ -26,6 +40,7 @@ if($prioritetas != '')
 $sql .= " ORDER BY id $rikiavimas LIMIT $limit";
 
 $result = $conn->query($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +54,15 @@ $result = $conn->query($sql);
 <body>
 
 <h1>IT pagalbos užklausos</h1>
+
+<p>
+Prisijungta kaip:
+<strong><?= $_SESSION['role']; ?></strong>
+
+<a href="logout.php">
+    Atsijungti
+</a>
+</p>
 
 <form method="GET">
 
@@ -90,6 +114,11 @@ $result = $conn->query($sql);
 
 <p>
     <a href="create.php">Sukurti naują užklausą</a>
+
+    <?php if($_SESSION['role'] == 'specialistas') { ?>
+        |
+        <a href="archyvas.php">Archyvas</a>
+    <?php } ?>
 </p>
 
 <table border="1" cellpadding="10">
@@ -109,23 +138,59 @@ $result = $conn->query($sql);
 
         <td><?= $row['id']; ?></td>
 
-        <td><?= $row['pavadinimas']; ?></td>
+        <td><?= htmlspecialchars($row['pavadinimas']); ?></td>
 
         <td>
-            <details>
-                <summary style="cursor:pointer;">
-                    Skaityti aprašymą
-                </summary>
-
-                <div style="max-width:300px; margin-top:5px;">
-                    <?= $row['aprasymas']; ?>
-                </div>
-            </details>
+            <a href="aprasymas.php?id=<?= $row['id']; ?>">
+                Peržiūrėti problemą
+            </a>
         </td>
 
         <td><?= $row['prioritetas']; ?></td>
 
-        <td><?= $row['busena']; ?></td>
+        <td>
+
+        <?php if($_SESSION['role'] == 'specialistas') { ?>
+
+        <form method="POST" action="status.php">
+
+            <input
+                type="hidden"
+                name="id"
+                value="<?= $row['id']; ?>">
+
+            <select name="busena">
+
+                <option value="naujas"
+                    <?= $row['busena'] == 'naujas' ? 'selected' : ''; ?>>
+                    Naujas
+                </option>
+
+                <option value="vykdomas"
+                    <?= $row['busena'] == 'vykdomas' ? 'selected' : ''; ?>>
+                    Vykdomas
+                </option>
+
+                <option value="uzbaigtas"
+                    <?= $row['busena'] == 'uzbaigtas' ? 'selected' : ''; ?>>
+                    Užbaigtas
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Keisti
+            </button>
+
+        </form>
+
+        <?php } else { ?>
+
+            <?= $row['busena']; ?>
+
+        <?php } ?>
+
+        </td>
 
         <td>
             <a href="edit.php?id=<?= $row['id']; ?>">

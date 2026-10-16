@@ -1,0 +1,3 @@
+# Rasta klaida                                                                          # Kaip klaida ištaisyta
+Kuriant užklausą žema ar vidutine būsena ir nepasirinkus kam priskirti, meta klaidą     Pakeičiau jog būtina priskirti ir vietoj ID, pasirinkimas Specialistas
+Po užklausa palikus komentarą, nerodo kas pakomentavo (Darbuotojas ar Specialistas)     Pataisius kodą komentaruose rodo kas pakomentavo

@@ -15,7 +15,7 @@ Prieš pradedant, jūsų kompiuteryje turi būti įdiegta:
 
 ## DIEGIMAS IR PALEIDIMAS
 Git clone: https://github.com/AidasBa/1.-IT-pagalbos-u-klaus-ticket-sistema-.git
-Cd 1. IT pagalbos užklausų („ticket“) sistema
+Cd ticket-sistema
 
 ## DUOMENŲ BAZĖS PARUOŠIMAS
 Atsidarius programą ,,XAMPP“ įjungti ,,Apache“ ir ,,MYSQL“.

@@ -3,7 +3,7 @@ Organizacijoje darbuotojai IT problemas siunčia el. paštu, telefonu arba žinu
 
 ## Naudotojai
 1.	Darbuotojas — teikia IT pagalbos užklausas ir stebi jų būseną; nori greitai pateikti problemą ir matyti, kada ji bus išspręsta.
-2.	IT specialistas / Administratorius — registruoja, klasifikuoja užklausas, priskiria prioritetus ir sprendžia problemas; nori matyti aiškų darbų sąrašą ir prioritetus be pasimetusių užklausų.
+2.	IT specialistas — registruoja, klasifikuoja užklausas, priskiria prioritetus ir sprendžia problemas; nori matyti aiškų darbų sąrašą ir prioritetus be pasimetusių užklausų.
 
 ## Esamas procesas (as-is)
 Kur dabar saugoma: El. paštas, telefono skambučiai, pokalbių programėlės.

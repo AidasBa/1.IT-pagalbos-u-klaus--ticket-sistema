@@ -1,7 +1,8 @@
 <?php
+
 require 'config.php';
 
-for($i = 1; $i <= 1000; $i++)
+for($i = 1; $i <= 9000; $i++)
 {
     $pavadinimas = "Problema " . $i;
 
@@ -11,18 +12,22 @@ for($i = 1; $i <= 1000; $i++)
 
     $prioritetas = $prioritetai[array_rand($prioritetai)];
 
-    $assigned_to = 0;
+    $user_id = 1;
+    $assigned_to = 1;
 
     $sql = "INSERT INTO tickets
-    (pavadinimas, aprasymas, prioritetas, assigned_to, busena)
+    (pavadinimas, aprasymas, prioritetas, user_id, assigned_to, busena)
     VALUES
-    ('$pavadinimas',
-     '$aprasymas',
-     '$prioritetas',
-     '$assigned_to',
-     'naujas')";
+    (
+        '$pavadinimas',
+        '$aprasymas',
+        '$prioritetas',
+        '$user_id',
+        '$assigned_to',
+        'naujas'
+    )";
 
     $conn->query($sql);
 }
 
-echo "Sugeneruota 1000 uzklausu!";
+echo "Sugeneruota 9000 uzklausu!";
