@@ -6,19 +6,25 @@ if(isset($_POST['submit']))
     $pavadinimas = $_POST['pavadinimas'];
     $aprasymas = $_POST['aprasymas'];
     $prioritetas = $_POST['prioritetas'];
-    $assigned_to = $_POST['assigned_to'];
+    $assigned_to = (int)($_POST['assigned_to'] ?? 0);
 
+ 
     // VT-1
     if($prioritetas == "aukstas" && empty($assigned_to))
     {
         die("Aukšto prioriteto užklausa privalo turėti priskirtą specialistą.");
     }
 
-    // Tikriname ar specialistas egzistuoja
+    
     if(!empty($assigned_to) && $assigned_to != 1)
     {
         die("Toks specialistas neegzistuoja.");
     }
+
+    if($assigned_to == 0)
+{
+    $assigned_to = "NULL";
+}
 
     // VT-2
     if(strlen(trim($aprasymas)) < 5)
@@ -29,7 +35,7 @@ if(isset($_POST['submit']))
     $sql = "INSERT INTO tickets
     (pavadinimas, aprasymas, prioritetas, user_id, assigned_to, busena)
     VALUES
-    ('$pavadinimas', '$aprasymas', '$prioritetas', 1, '$assigned_to', 'naujas')";
+    ('$pavadinimas', '$aprasymas', '$prioritetas', 1, $assigned_to, 'naujas')";
 
     $conn->query($sql);
 
@@ -45,6 +51,7 @@ if(isset($_POST['submit']))
     <title>Nauja užklausa</title>
 
     <link rel="stylesheet" href="../assets/style.css">
+
 </head>
 <body>
 

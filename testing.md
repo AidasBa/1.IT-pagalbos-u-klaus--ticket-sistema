@@ -7,3 +7,4 @@ Paieškos lauke įvedus bent 1 žodį, suranda užklausą                     Pa
 Užklausos šalinimas                                                     Pavyko / užklausa ištrinta   
 Keičiant vartotojus palikti komentarą, kad rodytų kas tai parašė        Nepavyko / nerodė kas tai parašė
 Keičiant vartotojus palikti komentarą, kad rodytų kas tai parašė        Pavyko / rodo kuris vartotojas palieka komentarą
+Bandymas greitai 2 kartus paspausti kurti užklausą dublikatui           Nepavyko / susikuria 1 užklausa
