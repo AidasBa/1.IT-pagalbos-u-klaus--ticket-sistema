@@ -4,3 +4,4 @@ Po užklausa palikus komentarą, nerodo kas pakomentavo (Darbuotojas ar Speciali
 Nepriskyrus specialisto prie užklausos ir paspaudus kurti, fatal error                  Pridėjus kodą, nepasirinkus specialisto meta įspėjimą
 Užklausoje leidžiama aprašyme įrašyti mažiau nei 5 simboliai                            Pataisius kodą, minimalus simbolių skaičius yra 5
 Leidžiama kurti aukšto prioriteto užklausą nepasirinkus specialisto                     Pataisius kodą, aukšto prioriteto užklausai reikia pasirinkti specialistą
+Palikus kelis ar daugiau tarpus paieškos lauke ir įvedus žodį, nefiltruoja              Pataisius kodą, randa

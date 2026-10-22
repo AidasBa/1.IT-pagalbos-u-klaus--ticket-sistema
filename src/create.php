@@ -60,17 +60,21 @@ if(isset($_POST['submit']))
 <form method="POST">
 
     <input
-        type="text"
-        name="pavadinimas"
-        placeholder="Pavadinimas"
-        required>
+    type="text"
+    name="pavadinimas"
+    placeholder="Pavadinimas"
+    required
+    oninvalid="this.setCustomValidity('Prašome užpildyti šį lauką.')"
+    oninput="this.setCustomValidity('')">
 
     <br><br>
 
     <textarea
         name="aprasymas"
         placeholder="Aprašymas"
-        required></textarea>
+        required
+        oninvalid="this.setCustomValidity('Prašome užpildyti šį lauką.')"
+        oninput="this.setCustomValidity('')"></textarea>
 
     <br><br>
 

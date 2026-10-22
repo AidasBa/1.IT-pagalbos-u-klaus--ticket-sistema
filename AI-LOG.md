@@ -10,4 +10,6 @@ Data            Problema                                            Kaip naudota
 
 2026-10-15      Reikėjo pagalbos užklausų auto. generavimui         Prašymas sukurti kodą                   Sukūrė, panaudojus kodą suveikė
 
+2026-10-19      Reikėjo pagalbos su testavimų kodais                Prašymas sukurti kodą                   Sukūrė, panaudojus veikia
+
 2026-10-19      Reikėjo php failo, kad paleistų visus testus vienu metu   Prašymas sukurti kodą             Sukūrė, panaudojus veikia

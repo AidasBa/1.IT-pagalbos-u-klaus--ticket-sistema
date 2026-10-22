@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2026 at 08:56 PM
+-- Generation Time: Oct 19, 2026 at 09:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -49,7 +49,8 @@ INSERT INTO `comments` (`id`, `tekstas`, `ticket_id`, `user_id`, `created_at`, `
 (0, '    dawdwa', 1006, 1, '2026-10-16 17:43:20', 'specialistas'),
 (0, '    dwadw', 1006, 1, '2026-10-16 17:43:25', 'darbuotojas'),
 (0, '    das', 1011, 1, '2026-10-16 17:47:18', 'darbuotojas'),
-(0, '    NEKURIAM NESĄMONINGŲ UŽKLAUSŲ', 1014, 1, '2026-10-16 18:07:19', 'specialistas');
+(0, '    NEKURIAM NESĄMONINGŲ UŽKLAUSŲ', 1014, 1, '2026-10-16 18:07:19', 'specialistas'),
+(0, '    eeee', 19027, 1, '2026-10-19 17:17:44', 'darbuotojas');
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,7 @@ CREATE TABLE `tickets` (
   `prioritetas` enum('zemas','vidutinis','aukstas') NOT NULL,
   `busena` enum('naujas','vykdomas','uzbaigtas') NOT NULL,
   `user_id` int(255) NOT NULL,
-  `assigned_to` int(255) NOT NULL,
+  `assigned_to` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `closed_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -19123,7 +19124,15 @@ INSERT INTO `tickets` (`id`, `pavadinimas`, `aprasymas`, `prioritetas`, `busena`
 (19020, 'Problema 8997', 'Sugeneruota testine uzklausa Nr. 8997', 'aukstas', 'naujas', 1, 1, '2026-10-16 18:47:45', NULL),
 (19021, 'Problema 8998', 'Sugeneruota testine uzklausa Nr. 8998', 'vidutinis', 'naujas', 1, 1, '2026-10-16 18:47:45', NULL),
 (19022, 'Problema 8999', 'Sugeneruota testine uzklausa Nr. 8999', 'vidutinis', 'naujas', 1, 1, '2026-10-16 18:47:45', NULL),
-(19023, 'Problema 9000', 'Sugeneruota testine uzklausa Nr. 9000', 'aukstas', 'naujas', 1, 1, '2026-10-16 18:47:45', NULL);
+(19023, 'Problema 9000', 'Sugeneruota testine uzklausa Nr. 9000', 'aukstas', 'naujas', 1, 1, '2026-10-16 18:47:45', NULL),
+(19027, 'gesges', 'gsegesesgges', 'zemas', 'naujas', 1, 1, '2026-10-19 17:17:36', NULL),
+(19028, 'dublikato testas', 'waddwa', 'zemas', 'naujas', 1, 1, '2026-10-19 17:17:56', NULL),
+(19029, 'dublikato testas', 'waddwa', 'zemas', 'naujas', 1, 1, '2026-10-19 17:18:00', NULL),
+(19033, 'rsgeegs', 'esggseseg', 'zemas', 'naujas', 1, 1, '2026-10-19 17:30:47', NULL),
+(19034, 'wdadawadwadw', 'wadwda', 'zemas', 'naujas', 1, 1, '2026-10-19 17:33:43', NULL),
+(19035, 'testas', 'testas', 'zemas', 'naujas', 1, NULL, '2026-10-19 17:41:21', NULL),
+(19036, 'testas', 'testas', 'vidutinis', 'naujas', 1, NULL, '2026-10-19 17:41:31', NULL),
+(19037, 'testas', 'testas', 'aukstas', 'naujas', 1, 1, '2026-10-19 17:41:43', NULL);
 
 -- --------------------------------------------------------
 
@@ -19182,7 +19191,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19024;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19038;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -10,7 +10,7 @@ if(!isset($_SESSION['role']))
 
 require 'config.php';
 
-$paieska = $_GET['paieska'] ?? '';
+$paieska = trim($_GET['paieska'] ?? '');
 $prioritetas = $_GET['prioritetas'] ?? '';
 $rikiavimas = $_GET['rikiavimas'] ?? 'desc';
 $limit = $_GET['limit'] ?? 20;
