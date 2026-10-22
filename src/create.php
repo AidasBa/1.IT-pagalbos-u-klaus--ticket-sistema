@@ -26,6 +26,12 @@ if(isset($_POST['submit']))
     $assigned_to = "NULL";
 }
 
+
+if(strlen($pavadinimas) > 60)
+{
+    die("Pavadinimas negali būti ilgesnis nei 60 simbolių.");
+}
+
     // VT-2
     if(strlen(trim($aprasymas)) < 5)
     {

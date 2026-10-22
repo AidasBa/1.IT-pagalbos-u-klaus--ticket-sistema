@@ -130,6 +130,7 @@ Prisijungta kaip:
         <th>Prioritetas</th>
         <th>Būsena</th>
         <th>Veiksmai</th>
+        <th>Sukurta</th>
     </tr>
 
     <?php while($row = $result->fetch_assoc()) { ?>
@@ -201,6 +202,10 @@ Prisijungta kaip:
                 Šalinti
             </a>
         </td>
+
+<td>
+    <?= date('Y-m-d H:i', strtotime($row['created_at'])); ?>
+</td>
 
     </tr>
 
