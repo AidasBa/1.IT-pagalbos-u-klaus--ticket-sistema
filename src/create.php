@@ -9,6 +9,33 @@ if(isset($_POST['submit']))
     $assigned_to = (int)($_POST['assigned_to'] ?? 0);
 
  
+$dangerous = [
+    '<script',
+    'javascript:',
+    'onerror=',
+    'onload=',
+    '<iframe',
+    '<object',
+    '<embed'
+];
+
+$text = strtolower($pavadinimas . ' ' . $aprasymas);
+
+foreach ($dangerous as $item) {
+    if (strpos($text, $item) !== false) {
+       die('
+<h2 style="color:red; font-size:32px;">
+    ⚠ Saugumo įspėjimas
+</h2>
+
+<p style="color:red; font-size:24px;">
+    Aptiktas galimai pavojingas įvesties tekstas.
+    Sistema užblokavo operaciją.
+</p>
+');
+    }
+}
+
     // VT-1
     if($prioritetas == "aukstas" && empty($assigned_to))
     {

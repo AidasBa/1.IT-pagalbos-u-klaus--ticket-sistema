@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2026 at 09:11 PM
+-- Generation Time: Oct 22, 2026 at 09:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -50,7 +50,9 @@ INSERT INTO `comments` (`id`, `tekstas`, `ticket_id`, `user_id`, `created_at`, `
 (0, '    dwadw', 1006, 1, '2026-10-16 17:43:25', 'darbuotojas'),
 (0, '    das', 1011, 1, '2026-10-16 17:47:18', 'darbuotojas'),
 (0, '    NEKURIAM NESĄMONINGŲ UŽKLAUSŲ', 1014, 1, '2026-10-16 18:07:19', 'specialistas'),
-(0, '    eeee', 19027, 1, '2026-10-19 17:17:44', 'darbuotojas');
+(0, '    eeee', 19027, 1, '2026-10-19 17:17:44', 'darbuotojas'),
+(0, '    dwadaw', 19037, 1, '2026-10-19 19:12:51', 'darbuotojas'),
+(0, '    efef', 19037, 1, '2026-10-19 19:13:01', 'specialistas');
 
 -- --------------------------------------------------------
 
@@ -19132,7 +19134,11 @@ INSERT INTO `tickets` (`id`, `pavadinimas`, `aprasymas`, `prioritetas`, `busena`
 (19034, 'wdadawadwadw', 'wadwda', 'zemas', 'naujas', 1, 1, '2026-10-19 17:33:43', NULL),
 (19035, 'testas', 'testas', 'zemas', 'naujas', 1, NULL, '2026-10-19 17:41:21', NULL),
 (19036, 'testas', 'testas', 'vidutinis', 'naujas', 1, NULL, '2026-10-19 17:41:31', NULL),
-(19037, 'testas', 'testas', 'aukstas', 'naujas', 1, 1, '2026-10-19 17:41:43', NULL);
+(19037, 'testas', 'testas', 'aukstas', 'naujas', 1, 1, '2026-10-19 17:41:43', NULL),
+(19039, 'tai yra nežinau kiek simbolių tekstas testavimui 1', 'sqdwwqddqwdqw', 'zemas', 'naujas', 1, NULL, '2026-10-22 18:40:31', NULL),
+(19040, 'tai yra nežinau kiek simbolių tekstas testavimui 1 dar pridedam pridedam', 'ssssssss', 'zemas', 'naujas', 1, NULL, '2026-10-22 18:40:57', NULL),
+(19041, 's', 'ssssssssssss', 'zemas', 'naujas', 1, NULL, '2026-10-22 18:43:09', NULL),
+(19042, 'dwaaaaaaawwwwwwwwwwwwwwwwwww', 'wwwwwwwwwwwwwww', 'zemas', 'naujas', 1, NULL, '2026-10-22 18:43:27', NULL);
 
 -- --------------------------------------------------------
 
@@ -19191,7 +19197,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19038;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19043;
 
 --
 -- AUTO_INCREMENT for table `users`
